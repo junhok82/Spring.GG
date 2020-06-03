@@ -57,6 +57,26 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- embed tomcat -->
+		<dependency> 
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		<!-- httpclient -->
+		<dependency> 
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			 <version>4.3.5</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
