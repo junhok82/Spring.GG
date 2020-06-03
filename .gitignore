@@ -2,6 +2,9 @@
 # Created by httpswww.gitignore.ioapijava,macos,windows,eclipse,java-web
 # Edit at httpswww.gitignore.iotemplates=java,macos,windows,eclipse,java-web
 
+# API KEY
+Key.java
+
 ### Eclipse ###
 .metadata
 bin
