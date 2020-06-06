@@ -34,27 +34,29 @@ public class Controller {
 		// 숙련도 정보 
 		String summonerid = summoner.getId();
 		ChampionMasteryParser championMasteryParser = new ChampionMasteryParser();
-		List<ChampionMastery> championMasteryList = championMasteryParser.getJsonData(summonerid);		
-//		for(ChampionMastery c : championMasteryList)
-//			System.out.println(c.toString());
+		List<ChampionMastery> championMasteryList = championMasteryParser.getJsonData(summonerid);
+		System.out.println("--- 챔피언 숙련도 정보 --- ");
+		for(ChampionMastery c : championMasteryList) {
+			System.out.println(c.toString());
+		}
 		
 		
 		// 로테이션 정보
 		ChampionLotationParser championLotationParser = new ChampionLotationParser();
 		ChampionLotation championLotation = championLotationParser.getJsonData();		
-//		System.out.println(championLotation.toString());
+		System.out.println("챔피언 로테이션 정보 : " + championLotation.toString());
 		
 		// 전적 리스트
 		String accountId = summoner.getAccountId();
 		MatchListParser matchListParser = new MatchListParser();
 		MatchList matchList = matchListParser.getJsonData(accountId);
-//		System.out.println(matchList.toString());
+		System.out.println("전적 리스트 : " + matchList.toString());
 		
 		
 		// 현재 게임정보
 		CurrentGameInfoParser currentGameInfoParser = new CurrentGameInfoParser();
 		CurrentGameInfo currentGameInfo = currentGameInfoParser.getJsonData(summonerid);
-//		System.out.println(currentGameInfo.toString());
+		System.out.println("현재 게임 정보 : " + currentGameInfo.toString());
 		
 		if(summoner != null && !summoner.equals(null)) {
 			return new ResponseEntity<Summoner>(summoner,HttpStatus.OK);

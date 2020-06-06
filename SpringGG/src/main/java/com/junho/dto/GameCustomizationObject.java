@@ -32,6 +32,6 @@ public class GameCustomizationObject {
 	@Override
 	public String toString() {
 		return "GameCustomizationObject [category=" + category + ", content=" + content + "]";
-	} 
+	}
 	
 }
