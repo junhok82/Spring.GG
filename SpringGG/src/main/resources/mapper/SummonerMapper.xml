@@ -10,7 +10,14 @@
 	</select>
 	
 	<insert id="insertSummoner" parameterType="com.junho.dto.Summoner">
-		
+		INSERT INTO USR_INFO VALUES(
+			#{accountId},
+			#{profileIconId},
+			#{revisionDate},
+			#{name},
+			#{id},
+			#{puuid},
+			#{summonerLevel})
 	</insert>
 	
 </mapper>
