@@ -47,12 +47,16 @@ public class Controller {
 				summonerService.insertSummoner(summoner);
 			}
 		}
+		System.out.println(summoner.toString());
 		
 		
 		// 숙련도 정보 
 		String summonerid = summoner.getId();
 		ChampionMasteryParser championMasteryParser = new ChampionMasteryParser();
 		List<ChampionMastery> championMasteryList = championMasteryParser.getJsonData(summonerid);
+		for(ChampionMastery c : championMasteryList) {
+			System.out.println(c.toString());
+		}
 		
 		// 로테이션 정보
 		ChampionLotationParser championLotationParser = new ChampionLotationParser();
@@ -67,9 +71,9 @@ public class Controller {
 		
 		
 		// 현재 게임정보
-		CurrentGameInfoParser currentGameInfoParser = new CurrentGameInfoParser();
-		CurrentGameInfo currentGameInfo = currentGameInfoParser.getJsonData(summonerid);
-		System.out.println("현재 게임 정보 : " + currentGameInfo.toString());
+		//CurrentGameInfoParser currentGameInfoParser = new CurrentGameInfoParser();
+		//CurrentGameInfo currentGameInfo = currentGameInfoParser.getJsonData(summonerid);
+		//System.out.println("현재 게임 정보 : " + currentGameInfo.toString());
 		
 		if(summoner != null && !summoner.equals(null)) {
 			return new ResponseEntity<Summoner>(summoner,HttpStatus.OK);
